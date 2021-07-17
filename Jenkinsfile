@@ -65,7 +65,7 @@ pipeline {
 	      steps {
 		     echo "Stop analysis"
 			 withSonarQubeEnv('Test_Sonar'){
-			   bat "$(scannerHome)\\SonarScanner.MSBuild.exe end"
+			   bat '$(scannerHome)\\SonarScanner.MSBuild.exe end /k:SampleWebApp /n:SampleWebApp /v:1.0'
 			 }
 		  }
 	   }
@@ -80,7 +80,7 @@ pipeline {
 	   
 	   stage('Move Image to Docker Hub')
 	   {
-	     Steps {
+	     steps {
 		     echo "Move Image to Docker Hub"
 			 bat "docker tag i_${username}_master ${registry}:${BUILD_NUMBER}"
 			 
