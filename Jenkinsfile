@@ -17,13 +17,12 @@ pipeline {
         
         stage('Sonarqube') {
 	     steps {
-	     echo "Start sonarqube analysis step"
-		 withSonarQubeEnv('Test_Sonar'){
+	        echo "Start sonarqube analysis step"
+		withSonarQubeEnv('Test_Sonar'){
 		    bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:Sample /n:SampleWebApp /v:1.0"
 		 }
-	 }
-            }
-        }
+	      }
+         }
     }
 }
 
