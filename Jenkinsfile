@@ -45,4 +45,5 @@ pipeline {
 		   bat "dotnet restore"
 		 }
 	   }
+	}
 }
