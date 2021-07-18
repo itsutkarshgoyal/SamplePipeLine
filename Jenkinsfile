@@ -44,7 +44,7 @@ pipeline {
 	     steps {
 		     echo "Start sonarqube analysis step"
 			 withSonarQubeEnv('Test_Sonar'){
-			    bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:Sample /n:SampleWebApp /v:1.0"
+			    bat "${scannerHome}/SonarScanner.MSBuild.dll begin /k:Sample /n:SampleWebApp /v:1.0"
 			 }
 		 }
 	   }
